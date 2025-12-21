@@ -1,0 +1,10 @@
+services:
+  hugo:
+    image: hugomods/hugo:base
+    container_name: hugo-blog
+    ports:
+      - "7000:7000"
+    volumes:
+      - ./posts:/src
+    command: server --bind 0.0.0.0 --port 7000 --buildDrafts --buildFuture
+    restart: unless-stopped

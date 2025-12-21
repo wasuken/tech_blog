@@ -1,0 +1,15 @@
+# Hugo生成物
+public/
+resources/_gen/
+.hugo_build.lock
+
+# OS/エディタ
+.DS_Store
+Thumbs.db
+*~
+.vscode/
+.idea/
+
+# その他
+node_modules/
+npm-debug.log
