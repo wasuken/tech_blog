@@ -1,34 +1,36 @@
----
 kind: pipeline
 type: kubernetes
 name: hugo-pipeline
+
 steps:
-  - name: build-hugo
-    image: klakegg/hugo:latest
-    commands:
-      - cd posts
-      - hugo --minify
-      - ls -la public/
-  - name: create-docker-context
-    image: alpine:latest
-    commands:
-      - cp -r posts/public ./public
-      - ls -la public/
-  - name: docker-build
-    image: plugins/docker
-    settings:
-      registry: ghcr.io
-      repo: ghcr.io/wasuken/tech_blog
-      username:
-        from_secret: github_username
-      password:
-        from_secret: github_token
-      tags:
-        - latest
-        - ${DRONE_COMMIT_SHA:0:8}
-  - name: deploy-complete
-    image: alpine:latest
-    commands:
-      - echo "Hugo build complete!"
-      - echo "Docker image: ghcr.io/wasuken/tech_blog:latest"
-      - echo "Image pushed successfully"
+- name: build-hugo
+  image: klakegg/hugo:latest
+  commands:
+  - cd posts
+  - hugo --minify
+  - ls -la public/
+
+- name: create-docker-context
+  image: alpine:latest
+  commands:
+  - cp -r posts/public ./public
+  - ls -la public/
+
+- name: docker-build
+  image: plugins/docker
+  settings:
+    registry: ghcr.io
+    repo: ghcr.io/wasuken/tech_blog
+    username:
+      from_secret: github_username
+    password:
+      from_secret: github_token
+    tags:
+    - latest
+    - "${DRONE_COMMIT_SHA:0:8}"  # ←クォートで囲む♠
+
+- name: deploy-complete
+  image: alpine:latest
+  commands:
+  - echo "Hugo build complete!"
+  - echo "Image pushed successfully"
