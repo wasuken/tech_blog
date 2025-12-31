@@ -1,0 +1,32 @@
+kind: pipeline
+type: docker
+name: hugo-pipeline
+
+steps:
+- name: build-hugo
+  image: klakegg/hugo:latest
+  commands:
+  - cd posts  # ←Hugoディレクトリに移動♠
+  - hugo --minify
+  - ls -la public/  # ←ビルド確認♧
+
+- name: create-docker-context
+  image: alpine:latest
+  commands:
+  - cp -r posts/public ./public  # ←ルートにpublicコピー♥
+  - ls -la public/
+
+- name: build-docker
+  image: plugins/docker
+  settings:
+    dockerfile: Dockerfile  # ←ルートのDockerfile想定♠
+    repo: your-registry/hugo-site
+    tags: 
+    - latest
+    - ${DRONE_COMMIT_SHA:0:8}
+
+- name: deploy
+  image: alpine:latest
+  commands:
+  - echo "Hugo build complete!"
+  - echo "Built files in public/ directory"
