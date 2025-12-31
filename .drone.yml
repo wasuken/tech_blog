@@ -24,7 +24,7 @@ steps:
     tags: 
     - latest
     - ${DRONE_COMMIT_SHA:0:8}
-    registory: false
+    registry: false
 
 - name: deploy
   image: alpine:latest
