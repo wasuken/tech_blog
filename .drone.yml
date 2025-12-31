@@ -20,7 +20,7 @@ steps:
   image: plugins/docker
   settings:
     dockerfile: Dockerfile  # ←ルートのDockerfile想定♠
-    repo: your-registry/hugo-site
+    repo: wasuken/tech_blog
     tags: 
     - latest
     - ${DRONE_COMMIT_SHA:0:8}
@@ -30,3 +30,9 @@ steps:
   commands:
   - echo "Hugo build complete!"
   - echo "Built files in public/ directory"
+
+# Drone側でイメージビルド→push→kubectl更新
+- name: update-deployment
+  image: bitnami/kubectl
+  commands:
+  - kubectl set image deployment/hugo-site hugo=wasuken/hugo:${DRONE_BUILD_NUMBER}
