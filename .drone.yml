@@ -41,7 +41,8 @@ steps:
     KUBECONFIG:
       from_secret: kubeconfig
   commands:
-    - kubectl set image deployment/hugo-site hugo=ghcr.io/wasuken/tech_blog:${DRONE_COMMIT_SHA:0:8}
+    - kubectl set image deployment/hugo-site hugo=ghcr.io/wasuken/tech_blog:latest
+    - kubectl rollout restart deployment/hugo-site
     - kubectl rollout status deployment/hugo-site
 
 - name: deploy-complete
