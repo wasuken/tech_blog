@@ -17,5 +17,5 @@ steps:
 
 volumes:
 - name: hugo-pv
-  claim:
-    name: hugo-static-pvc
+  host:
+    path: /tmp/hugo-static
