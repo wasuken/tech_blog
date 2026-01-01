@@ -2,64 +2,20 @@ kind: pipeline
 type: kubernetes
 name: hugo-pipeline
 
-volumes:
-- name: shared-volume
-  temp: {}
-
 steps:
 - name: build-hugo
   image: klakegg/hugo:latest
   volumes:
-  - name: shared-volume
-    path: /shared
+  - name: hugo-pv
+    path: /output
   commands:
-  - echo "=== Hugo Build Start ==="
   - cd posts
   - hugo
-  - echo "=== Hugo Build Complete ==="
-  - ls -la public/
-  - echo "=== Copying to shared volume ==="
-  - cp -r public /shared/
-  - echo "=== Shared volume contents ==="
-  - ls -la /shared/
-  - ls -la /shared/public/
-  - echo "=== Hugo Build Step Complete ==="
+  - rm -rf /output/*
+  - cp -r public/* /output/
+  - ls -la /output/
 
-- name: docker-build
-  image: plugins/docker
-  volumes:
-  - name: shared-volume
-    path: /shared
-  settings:
-    registry: ghcr.io
-    repo: ghcr.io/wasuken/tech_blog
-    username:
-      from_secret: github_username
-    password:
-      from_secret: github_token
-    tags:
-    - latest
-  commands:
-    - echo "=== Docker Build Start ==="
-    - ls -la /shared/
-    - ls -la /shared/public/
-    - cp -r /shared/public ./public
-    - echo "=== After copy ==="
-    - ls -la ./public/
-    - echo "=== Docker Build Step Complete ==="
-
-- name: deploy-to-k3s
-  image: bitnami/kubectl
-  environment:
-    KUBECONFIG:
-      from_secret: kubeconfig
-  commands:
-    - kubectl set image deployment/hugo-site hugo=ghcr.io/wasuken/tech_blog:latest
-    - kubectl rollout restart deployment/hugo-site
-    - kubectl rollout status deployment/hugo-site --timeout=300s
-
-- name: deploy-complete
-  image: alpine:latest
-  commands:
-  - echo "Hugo build complete!"
-  - echo "Image pushed successfully"
+volumes:
+- name: hugo-pv
+  claim:
+    name: hugo-static-pvc
