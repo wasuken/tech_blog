@@ -13,9 +13,17 @@ steps:
   - name: shared-volume
     path: /shared
   commands:
+  - echo "=== Hugo Build Start ==="
   - cd posts
   - hugo
+  - echo "=== Hugo Build Complete ==="
+  - ls -la public/
+  - echo "=== Copying to shared volume ==="
   - cp -r public /shared/
+  - echo "=== Shared volume contents ==="
+  - ls -la /shared/
+  - ls -la /shared/public/
+  - echo "=== Hugo Build Step Complete ==="
 
 - name: docker-build
   image: plugins/docker
@@ -31,9 +39,14 @@ steps:
       from_secret: github_token
     tags:
     - latest
-    - "${DRONE_COMMIT_SHA:0:8}"
   commands:
+    - echo "=== Docker Build Start ==="
+    - ls -la /shared/
+    - ls -la /shared/public/
     - cp -r /shared/public ./public
+    - echo "=== After copy ==="
+    - ls -la ./public/
+    - echo "=== Docker Build Step Complete ==="
 
 - name: deploy-to-k3s
   image: bitnami/kubectl
@@ -43,7 +56,7 @@ steps:
   commands:
     - kubectl set image deployment/hugo-site hugo=ghcr.io/wasuken/tech_blog:latest
     - kubectl rollout restart deployment/hugo-site
-    - kubectl rollout status deployment/hugo-site
+    - kubectl rollout status deployment/hugo-site --timeout=300s
 
 - name: deploy-complete
   image: alpine:latest
