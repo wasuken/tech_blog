@@ -1,9 +1,9 @@
 ---
 layout: post
 title: "PostgreSQLのpg_trgmで中間一致検索を高速化する仕組みを学ぶ"
-date: 2025-12-21 12:00:00 +0900
-categories: tech blog
-tags: [PostgreSQL, 全文検索, インデックス, パフォーマンス]
+date: 2025-12-21T12:00:00+09:00
+categories: ["tech", "blog"]
+tags: ["PostgreSQL", "全文検索", "インデックス", "パフォーマンス"]
 ---
 
 ## 参考
