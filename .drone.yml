@@ -2,22 +2,26 @@ kind: pipeline
 type: kubernetes
 name: hugo-pipeline
 
+volumes:
+- name: shared-volume
+  temp: {}
+
 steps:
 - name: build-hugo
   image: klakegg/hugo:latest
+  volumes:
+  - name: shared-volume
+    path: /shared
   commands:
   - cd posts
-  - hugo --minify
-  - ls -la public/
-
-- name: create-docker-context
-  image: alpine:latest
-  commands:
-  - cp -r posts/public ./public
-  - ls -la public/
+  - hugo
+  - cp -r public /shared/
 
 - name: docker-build
   image: plugins/docker
+  volumes:
+  - name: shared-volume
+    path: /shared
   settings:
     registry: ghcr.io
     repo: ghcr.io/wasuken/tech_blog
@@ -27,7 +31,9 @@ steps:
       from_secret: github_token
     tags:
     - latest
-    - "${DRONE_COMMIT_SHA:0:8}"  # ←クォートで囲む♠
+    - "${DRONE_COMMIT_SHA:0:8}"
+  commands:
+    - cp -r /shared/public ./public
 
 - name: deploy-to-k3s
   image: bitnami/kubectl
