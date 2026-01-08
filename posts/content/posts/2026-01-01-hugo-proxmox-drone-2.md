@@ -5,8 +5,6 @@ draft: false
 tags: ["k3s", "Drone", "CI/CD", "Hugo", "Docker", "Kubernetes", "自宅ラボ"]
 ---
 
-# k3s + Drone CI/CD構築体験記② 手動ビルドでなんとか動いた
-
 [前回のハマり話](https://mintblog.hatenablog.com/entry/2026/01/01/112426)の続編。
 
 今回は実際にCI/CDパイプラインを動かすところまで進めた。結論から言うと、自動化は99%完成したが、最後の1%（Webhook）で詰んだ。
