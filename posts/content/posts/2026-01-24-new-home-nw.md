@@ -30,12 +30,10 @@ categories: ["Infrastructure"]
 
 ## 2. サーバー構成表：北欧神話の神々
 
-スペックの高いRaspberry Pi 4をGatewayに、Pi 3をサービス層に割り当てます。
-
 | 物理筐体 | ホスト名 | 役割 | 冗長化の仕組み |
 | --- | --- | --- | --- |
-| **Pi 4 (A)** | **Odin** | 主系Gateway / VPN | **Keepalived (VIP: 192.168.1.1)** |
-| **Pi 4 (B)** | **Frigg** | 副系Gateway / VPN | Odinと仮想IPを共有 |
+| **Pi 3 (A)** | **Odin** | 主系Gateway / VPN | **Keepalived (VIP: 192.168.1.1)** |
+| **Pi 3 (B)** | **Frigg** | 副系Gateway / VPN | Odinと仮想IPを共有 |
 | **Pi 3 (C)** | **Huginn** | DNS / DHCP Primary | **ISC-DHCP Failover / Gravity Sync** |
 | **Pi 3 (D)** | **Muninn** | DNS / DHCP Secondary | Huginnとリアルタイム同期 |
 | **Pi 3 (E)** | **Mjolnir** | ストレージ (NAS) | **GlusterFS + Keepalived (VIP: .200)** |
@@ -77,4 +75,4 @@ Wi-Fi APに接続したスマホやPCなどのクライアントからは、以�
 
 ## おわりに
 
-この構成は、ラズパイ3/4の資産を最大限に活用しつつ、家庭内インフラとしての堅牢性を極限まで高めたものです。各ノードのセットアップ手順については、次回の記事で詳解します。
+この構成は、ラズパイ3の資産を最大限に活用しつつ、家庭内インフラとしての堅牢性を極限まで高めたものです。各ノードのセットアップ手順については、次回の記事で詳解します。
