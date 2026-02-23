@@ -6,7 +6,9 @@ tags: ["expo", "react-native", "detox", "maestro", "android", "wsl2", "e2e"]
 
 ## TL;DR
 
-WSL2環境でExpo（React Native）のE2EテストをMaestroとDetoxで試みたが、どちらもWSL2とWindowsエミュレータの構造的な問題で動かなかった。Mobile開発においてMac以外は人権がない。
+WSL2環境でExpo（React Native）のE2EテストをMaestroとDetoxで試みたが、どちらもWSL2とWindowsエミュレータの構造的な問題で動かなかった。
+
+かなり過言ではあるが、あえて感情的になるならば、Mobile開発においてMac以外は人権がない。というかあまりにもMac環境以外がだるすぎる。
 
 ---
 
@@ -136,7 +138,7 @@ failed with error = Error: Command failed (code=1)
 
 DetoxはWSL2側のadbでエミュレータ内のプロセスを`ps | grep`で確認しようとする。しかし**エミュレータのプロセスはWindows側で動いている**ため、WSL2からは見えない。WebSocket接続も確立できずタイムアウト。
 
-これはWSL2の構造上の問題であり、設定でどうにかなるものではない。
+これはWSL2の構造上の問題であり、設定でどうにかなるものではなさそう。
 
 ---
 
@@ -167,6 +169,8 @@ E2Eを諦めて、ロジック層（`hooks/`など）のみJestでユニット�
 
 ローカルは諦めてCIでだけ動かす。EAS Workflowsには`type: maestro`のビルトインジョブがあり、設定が簡単。
 
+しかしローカルでなくCIに任せるというのは・・・・。
+
 ```yaml
 # .eas/workflows/e2e-android.yml
 jobs:
@@ -182,6 +186,11 @@ jobs:
       build_id: ${{ needs.build.outputs.build_id }}
       flow_path: ['.maestro/home.yml']
 ```
+
+# 所感
+
+Mobile開発をしたいならMac製品を買おう。
+それ以外は買うなら苦労は覚悟しよう。
 
 ---
 
