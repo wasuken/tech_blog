@@ -2,7 +2,7 @@
 title: "LinuxのCFSとEEVDFを整理する - スケジューラはなぜ赤黒木を使うのか"
 date: 2026-03-01T00:00:00+09:00
 draft: false
-tags: ["linux", "kernel", "scheduler", "infrastructure", "sre"]
+tags: ["linux", "kernel", "scheduler", "cfs", "eevdf", "技術書", "red-black-tree"]
 categories: ["infrastructure"]
 description: "CFSのvruntime・赤黒木・タイムスライスの仕組みと、Linux 6.6で導入されたEEVDFへの変遷をSRE視点で整理する"
 ---
@@ -178,4 +178,4 @@ EEVDF:
 - [Linux Kernel Documentation - Completely Fair Scheduler](https://www.kernel.org/doc/html/latest/scheduler/sched-design-CFS.html)
 - [Linux Kernel Documentation - EEVDF Scheduler](https://www.kernel.org/doc/html/latest/scheduler/sched-eevdf.html)
 - [LWN.net - An EEVDF CPU scheduler for Linux](https://lwn.net/Articles/925371/)
-- [論文: Earliest Eligible Virtual Deadline First (1995)](https://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.46.2706)
+- [Semantic Scholar - Earliest Eligible Virtual Deadline First (原論文 1995)](https://www.semanticscholar.org/paper/Earliest-Eligible-Virtual-Deadline-First-:-A-and-Stoica-Abdel-Wahab/9d07417330e3d37a5767359531b4adc4c27a5349)
