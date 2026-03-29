@@ -166,7 +166,7 @@ Next.jsの開発環境ではHMR（Hot Module Replacement）のたびにモジュ
 `new PrismaClient()` が毎回走ると接続が枯渇する。
 
 公式が推奨するパターンで回避する。
-> 参考: https://www.prisma.io/docs/guides/other/troubleshooting-orm/help-articles/nextjs-prisma-client-dev-practices
+> 参考: https://www.prisma.io/docs/orm/more/troubleshooting/nextjs
 
 ```typescript
 // src/lib/prisma.ts
