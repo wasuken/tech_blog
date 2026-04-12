@@ -1,6 +1,6 @@
 baseURL = '/'
 languageCode = 'ja'
-title = '怠惰ローカルブログ'
+title = '怠惰技術ブログ'
 theme = 'PaperMod'
 
 [params]
@@ -11,9 +11,13 @@ theme = 'PaperMod'
   assets.favicon = "/favicon.png"
 
 [params.homeInfoParams]
-  Title = "ブログ"
-  Content = "技術メモ"
+  Title = "記事一覧"
+  Content = "技術メモを残していきます"
 
+[[menu.main]]
+  name = "トップ"
+  url = "https://wasutech.dev"
+  weight = 1
 [[menu.main]]
   name = "アーカイブ"
   url = "/archives/"
