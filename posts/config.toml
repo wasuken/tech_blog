@@ -3,6 +3,11 @@ languageCode = 'ja'
 title = '怠惰技術ブログ'
 theme = 'PaperMod'
 
+enableRobotsTXT = true
+enableEmoji = true
+
+ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
+
 [params]
   ShowShareButtons = false
   ShowReadingTime = true
