@@ -8,6 +8,9 @@ enableEmoji = true
 
 ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
 
+[frontmatter]
+date = [":filename", ":default"]
+
 [params]
   ShowShareButtons = false
   ShowReadingTime = true
@@ -22,7 +25,7 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
 [[menu.main]]
   name = "トップ"
   url = "https://wasutech.dev"
-  weight = 1
+  weight = 5
 [[menu.main]]
   name = "アーカイブ"
   url = "/archives/"
@@ -35,6 +38,10 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
   name = "タグ"
   url = "/tags/"
   weight = 30
+[[menu.main]]
+  name = "RSS"
+  url = "/index.xml"
+  weight = 40
 
 [outputs]
   home = ["HTML", "RSS", "JSON"]
