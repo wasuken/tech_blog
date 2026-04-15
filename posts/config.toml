@@ -1,4 +1,4 @@
-baseURL = '/'
+baseURL = 'https://wasutech.dev'
 languageCode = 'ja'
 title = '怠惰技術ブログ'
 theme = 'PaperMod'
@@ -12,11 +12,11 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
 date = [":filename", ":default"]
 
 [params]
-  ShowShareButtons = false
   ShowReadingTime = true
   ShowBreadCrumbs = true
   ShowPostNavLinks = true
   assets.favicon = "/favicon.png"
+  ShowShareButtons = true
 
 [params.homeInfoParams]
   Title = "記事一覧"
