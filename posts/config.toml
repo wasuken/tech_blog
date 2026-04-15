@@ -1,4 +1,4 @@
-baseURL = 'https://wasutech.dev'
+baseURL = 'https://techblog.wasutech.dev'
 languageCode = 'ja'
 title = '怠惰技術ブログ'
 theme = 'PaperMod'
