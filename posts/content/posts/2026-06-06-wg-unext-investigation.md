@@ -7,7 +7,7 @@ categories: ["個人開発"]
 description: "WireGuard 経由で UNEXT が見れない問題の調査プロセスを記録した記事。tcpdump・iptables・ルーティングテーブルを使ってどう原因を絞り込んだかの思考トレース。"
 ---
 
-解決編はこちら → **【解決編URLをここに貼る】**
+解決編はこちら → [WireGuard 経由で UNEXT が見れない問題を解決した話 | 怠惰技術ブログ](https://techblog.wasutech.dev/posts/wg-unext-solution/)
 
 ## 概要
 
@@ -129,11 +129,15 @@ curl http://ip-api.com/json/<VPS_IP>
 
 ## Step 7: 原因の結論
 
-国内 IP なのに UNEXT に繋がらない → **VPS・データセンターの IP レンジごとブロックされている**。
+国内 IP なのに UNEXT に繋がらない → **VPS・データセンターの IP レンジごとブロックされている**。?
 
 動画配信サービスはクラウド・VPS の IP レンジをまるごとブロックするポリシーを持っていることがある。Netflix などと同じ仕組み。
 
 生配信が見れていた理由は、配信サーバーの IP 帯が VOD サーバーと異なるため、ブロック対象外だったと考えられる。
+
+あくまでも推測だが、調べようがない。
+
+とはいえ、今回は良い暇つぶしになった。
 
 ## 調査で使ったコマンドまとめ
 
@@ -152,4 +156,4 @@ curl http://ip-api.com/json/<VPS_IP>
 
 調査で原因が特定できたので、iptables で UNEXT の IP 帯だけ WireGuard をバイパスして解決した。
 
-解決編はこちら → **【解決編URLをここに貼る】**
+解決編はこちら → [WireGuard 経由で UNEXT が見れない問題を解決した話 | 怠惰技術ブログ](https://techblog.wasutech.dev/posts/wg-unext-solution/)
