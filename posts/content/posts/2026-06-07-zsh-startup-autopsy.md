@@ -1,5 +1,5 @@
 ---
-title: "Zshrcのチューニング: 203msから79msへ"
+title: ".zshrcのチューニング: 203msから79msへ"
 date: 2026-06-07T18:00:00+09:00
 draft: false
 tags: ["zsh", "terminal", "dotfiles", "performance"]
