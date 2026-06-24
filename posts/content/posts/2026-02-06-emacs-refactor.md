@@ -2,6 +2,7 @@
 title: "Emacsのdotfilesをモジュール化してメンテナンス性を向上させた話"
 date: 2026-02-06T23:30:00+09:00
 draft: false
+ai_assisted: true
 tags: ["Emacs", "dotfiles", "リファクタリング", "設定管理"]
 categories: ["技術", "開発環境"]
 description: "900行の肥大化したEmacs設定をファイル分割し、requireとloadの違いを理解して安定した環境を構築"

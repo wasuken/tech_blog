@@ -2,6 +2,7 @@
 title: "CloudflareアラートをWorker + Gemini APIでDiscordに要約通知する"
 date: 2026-04-12T21:00:00+09:00
 draft: false
+ai_assisted: true
 tags: ["Cloudflare", "Workers", "Gemini", "Discord", "JavaScript"]
 ---
 

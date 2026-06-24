@@ -2,6 +2,7 @@
 title: "WireGuard 経由で UNEXT が見れない問題を解決した話"
 date: 2026-06-06T00:00:00+09:00
 draft: false
+ai_assisted: true
 tags: ["WireGuard", "iptables", "インフラ", "ネットワーク"]
 categories: ["個人開発"]
 description: "自宅ラズパイをルーターにして WireGuard VPN 経由で通信する環境で UNEXT が見れなかった。原因は VPS の IP が動画配信サービスにブロックされていたこと。iptables で UNEXT の IP 帯だけ WG をバイパスして解決した話。"

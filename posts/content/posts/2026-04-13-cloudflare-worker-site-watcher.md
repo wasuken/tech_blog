@@ -2,6 +2,7 @@
 title: "Cloudflare Workers でサイト監視 + Discord通知を作った"
 date: 2026-04-13T12:00:00+09:00
 draft: false
+ai_assisted: true
 tags: ["Cloudflare", "Workers", "Discord", "監視", "インフラ"]
 ---
 

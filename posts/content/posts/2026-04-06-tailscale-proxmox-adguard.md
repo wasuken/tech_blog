@@ -2,6 +2,7 @@
 title: "AdGuard HomeをProxmox LXCに立ててTailscale経由でDNSブロックする"
 date: 2026-04-06T07:00:00+09:00
 draft: false
+ai_assisted: true
 tags: ["proxmox", "adguard", "tailscale", "homelab", "dns"]
 ---
 

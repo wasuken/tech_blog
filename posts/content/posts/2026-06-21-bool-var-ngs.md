@@ -2,6 +2,7 @@
 title: "「flag」って名前つけるのをやめろという記事を読んだ"
 date: 2026-06-21T21:00:00+09:00
 draft: false
+ai_assisted: true
 tags: ["clean-code", "naming", "best-practices", "design-patterns"]
 categories: ["tech"]
 description: "bool変数にflagとかdoneとか付けるなという記事を読んだ。プレフィックス命名のさわりと、そこから自分で広げた長い変数・関数名の話、デザインパターンやクリーンアーキテクチャとの接続。"

@@ -2,6 +2,7 @@
 title: "React NativeのTodoアプリで実装する相対時間ベースのプリセット機能"
 date: 2026-02-08T10:50:00+09:00
 draft: false
+ai_assisted: true
 tags: ["React Native", "Expo", "TypeScript", "date-fns", "Todoアプリ", "設計パターン"]
 categories: ["技術", "モバイル開発"]
 description: "絶対時間ではなく相対時間（dueHoursOffset）で期限を管理することで、繰り返しタスクを効率化するプリセット機能の実装方法を解説"

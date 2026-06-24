@@ -2,6 +2,7 @@
 title: "Proxmox LXCコンテナでJupyterLab環境構築 - 試行錯誤とトラブルシューティング"
 date: 2026-01-26T18:30:00+09:00
 draft: false
+ai_assisted: true
 tags: ["Proxmox", "LXC", "JupyterLab", "Ubuntu", "Python", "venv", "systemd", "インフラ", "トラブルシューティング"]
 ---
 

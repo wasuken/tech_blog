@@ -2,6 +2,7 @@
 title: "ローカル環境を汚さない静的サイト構築 - Hugo Docker Compose環境構築記録"
 date: 2025-12-21T23:00:00+09:00
 draft: false
+ai_assisted: true
 tags: ["Hugo", "Docker", "静的サイトジェネレータ", "環境構築"]
 ---
 
@@ -211,6 +212,7 @@ posts/
 title: "記事タイトル"
 date: 2025-12-21T10:00:00+09:00
 draft: false
+ai_assisted: true
 tags: ["タグ1", "タグ2"]
 ---
 

@@ -2,6 +2,7 @@
 title: "EDINET API v2 で有価証券報告書を自動取得する（Node.js / TypeScript）"
 date: 2026-05-24T00:00:00+09:00
 draft: false
+ai_assisted: true
 tags: ["EDINET", "Node.js", "TypeScript", "API", "個人開発"]
 categories: ["個人開発"]
 description: "金融庁が公開する EDINET API v2 を使って、有価証券報告書・四半期報告書の一覧取得と PDF ダウンロードを TypeScript で実装する。型定義・レート制限対策・50KB スキップ判定・エラーハンドリングのポイントを解説。"

@@ -2,6 +2,7 @@
 title: "React NativeでTextInputの日本語入力が壊れる問題と解決方法"
 date: 2026-01-31T18:30:00+09:00
 draft: false
+ai_assisted: true
 categories: ["React Native", "Expo"]
 tags: ["React Native", "Expo", "TextInput", "IME", "バグ修正", "日本語入力"]
 description: "React NativeのTextInputで日本語入力時に変換候補が消える問題の原因と、autoComplete/autoCorrectによる解決方法を解説します。"

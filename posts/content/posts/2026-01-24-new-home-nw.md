@@ -2,6 +2,7 @@
 title: "ラズパイ6台で作る、絶対に止まらない最強の自宅ネットワーク冗長化計画"
 date: 2026-01-24T19:00:00+09:00
 draft: false
+ai_assisted: true
 tags: ["RaspberryPi", "Network", "Keepalived", "インフラ構築", "冗長化"]
 categories: ["Infrastructure"]
 ---

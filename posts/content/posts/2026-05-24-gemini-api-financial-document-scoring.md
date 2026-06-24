@@ -2,6 +2,7 @@
 title: "Gemini API で財務書類を「怪しさ判定」する：スコア付き出力の設計"
 date: 2026-05-24T00:00:00+09:00
 draft: false
+ai_assisted: true
 tags: ["Gemini", "AI", "TypeScript", "プロンプト設計", "個人開発"]
 categories: ["個人開発"]
 description: "Gemini API に有価証券報告書の PDF を渡して財務分析させる。normal / caution / danger のスコアをプロンプトで定義し、出力をパースして DB に保存する設計を解説する。"

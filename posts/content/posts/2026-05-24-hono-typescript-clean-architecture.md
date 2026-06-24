@@ -2,6 +2,7 @@
 title: "Hono + TypeScript でクリーンアーキテクチャもどきを個人開発に持ち込む"
 date: 2026-05-30T00:22:00+09:00
 draft: false
+ai_assisted: true
 tags: ["Hono", "TypeScript", "クリーンアーキテクチャ", "Node.js", "個人開発"]
 categories: ["個人開発"]
 description: "個人開発に過剰では？と思いつつも Domain / UseCase / Infrastructure の3層に分けたら、テストが書きやすくなったし外部 API の差し替えが楽になった話。"

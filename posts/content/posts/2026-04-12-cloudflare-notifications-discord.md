@@ -2,6 +2,7 @@
 title: "Cloudflareの全通知をDiscord Webhookに飛ばす"
 date: 2026-04-12T18:00:00+09:00
 draft: false
+ai_assisted: true
 tags: ["Cloudflare", "Discord", "Workers", "Bash", "自動化"]
 categories: ["インフラ"]
 ---

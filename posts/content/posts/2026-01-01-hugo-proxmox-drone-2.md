@@ -2,6 +2,7 @@
 title: "k3s + Drone CI/CD構築体験記② 手動ビルドでなんとか動いた"
 date: 2026-01-01T18:00:00+09:00
 draft: false
+ai_assisted: true
 tags: ["k3s", "Drone", "CI/CD", "Hugo", "Docker", "Kubernetes", "自宅ラボ"]
 ---
 

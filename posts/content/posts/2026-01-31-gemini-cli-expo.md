@@ -2,6 +2,7 @@
 title: "Gemini CLIでExpo Todoアプリを爆速開発した話"
 date: 2026-01-31T19:00:00+09:00
 draft: false
+ai_assisted: true
 categories: ["Expo", "AI開発"]
 tags: ["Expo", "React Native", "Gemini", "AI", "Todo アプリ", "開発効率化"]
 description: "Gemini CLI を使って Expo の Todo アプリを開発した体験記。GEMINI.md でルールを管理し、段階的に機能を追加していく方法を紹介します。"

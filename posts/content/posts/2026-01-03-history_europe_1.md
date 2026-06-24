@@ -2,6 +2,7 @@
 title: "Audibleで学ぶヨーロッパ中世史：雑談メモ"
 date: 2026-01-03T22:00:00+09:00
 draft: false
+ai_assisted: true
 tags: ["history", "medieval", "byzantium", "europe", "learning"]
 categories: ["学習記録"]
 description: "Audibleでヨーロッパ史を聞きながら取ったメモと雑談。ビザンツ帝国、カロリング朝、そして歴史上の人物への率直な感想。"

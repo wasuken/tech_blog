@@ -2,6 +2,7 @@
 title: "ReactのuseStateでDate.now()を使うとlintエラーになる話"
 date: 2026-05-23T00:00:00+09:00
 draft: false
+ai_assisted: true
 tags: ["React", "TypeScript", "hooks", "lint"]
 categories: ["小ネタ"]
 description: "useState の初期値で Date.now() を直接呼ぶと react-hooks/purity エラーになる。lazy initialization で解決する小ネタ。"

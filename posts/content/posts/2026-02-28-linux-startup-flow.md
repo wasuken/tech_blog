@@ -2,6 +2,7 @@
 title: "Linuxの起動フローを整理する - UEFI/BIOSからinitまで"
 date: 2026-02-28T00:00:00+09:00
 draft: false
+ai_assisted: true
 tags: ["linux", "kernel", "boot", "infrastructure", "sre"]
 categories: ["infrastructure"]
 description: "UEFI/BIOSからブートローダー、カーネル、initまでのLinux起動フローをSRE視点で整理する"

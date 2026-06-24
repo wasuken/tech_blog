@@ -2,6 +2,7 @@
 title: "歴史地図アプリを雑にk3sへデプロイした"
 date: 2026-02-25T22:00:00+09:00
 draft: false
+ai_assisted: true
 tags: ["k3s", "Kubernetes", "React", "Vite", "MapLibre", "デプロイ", "Proxmox"]
 categories: ["インフラ", "開発"]
 description: "React+Vite+MapLibreで作った歴史地図アプリをk3sにデプロイした話。hostPathマウント、Viteの罠、ngrokとTailscaleを駆使したファイル転送など泥臭い記録。"

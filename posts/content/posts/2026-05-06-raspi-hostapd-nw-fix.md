@@ -2,6 +2,7 @@
 title: "Raspberry Pi 2台構成のWiFi APでSSIDが起動時に出ない問題を解決した"
 date: 2026-05-06T18:00:00+09:00
 draft: false
+ai_assisted: true
 tags: ["Raspberry Pi", "hostapd", "NetworkManager", "Linux", "ネットワーク", "WiFi"]
 categories: ["インフラ"]
 description: "Raspberry Pi 2台でESS構成（同一SSID・別チャンネル）のWiFi APを組んだところ、OS起動時にSSIDが出ない問題が発生。NetworkManagerとhostapdの起動順序が原因だったのでsystemdのoverride.confで解決した。"

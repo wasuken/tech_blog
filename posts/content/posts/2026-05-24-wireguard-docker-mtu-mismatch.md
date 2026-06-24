@@ -2,6 +2,7 @@
 title: "WireGuard + Docker で謎のタイムアウトが起きたら MTU を疑え"
 date: 2026-05-24T00:00:00+09:00
 draft: true
+ai_assisted: true
 tags: ["WireGuard", "Docker", "インフラ", "ネットワーク", "さくらのクラウド"]
 categories: ["個人開発"]
 description: "WireGuard VPN 越しに Docker コンテナが外部 API を叩くと断続的にタイムアウトする。原因は MTU のミスマッチ。ホスト・WireGuard・Docker の3層をすべて揃えて解決した話。"

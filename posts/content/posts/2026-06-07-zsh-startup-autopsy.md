@@ -2,6 +2,7 @@
 title: ".zshrcのチューニング: 203msから79msへ"
 date: 2026-06-07T18:00:00+09:00
 draft: false
+ai_assisted: true
 tags: ["zsh", "terminal", "dotfiles", "performance"]
 categories: ["tech"]
 description: "元記事に感化されてzshrcをいじった記録。フレームワークは捨てずに重複削除だけで2.5倍速になった話。"

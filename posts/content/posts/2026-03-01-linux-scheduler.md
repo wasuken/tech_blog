@@ -2,6 +2,7 @@
 title: "LinuxのCFSとEEVDFを整理する - スケジューラはなぜ赤黒木を使うのか"
 date: 2026-03-01T00:00:00+09:00
 draft: false
+ai_assisted: true
 tags: ["linux", "kernel", "scheduler", "cfs", "eevdf", "技術書", "red-black-tree"]
 categories: ["infrastructure"]
 description: "CFSのvruntime・赤黒木・タイムスライスの仕組みと、Linux 6.6で導入されたEEVDFへの変遷をSRE視点で整理する"

@@ -2,6 +2,7 @@
 title: "XBRL を自前パースして財務指標と監査情報を抽出する（Node.js）"
 date: 2026-05-24T00:00:00+09:00
 draft: true
+ai_assisted: true
 tags: ["XBRL", "Node.js", "TypeScript", "財務分析", "EDINET", "個人開発"]
 categories: ["個人開発"]
 description: "EDINET から取得した XBRL（ZIP）を展開し、売上高・営業利益・監査法人名・GC注記・大株主情報を Node.js で抽出する。日本の XBRL 特有のタグ名前空間の扱いを解説。"

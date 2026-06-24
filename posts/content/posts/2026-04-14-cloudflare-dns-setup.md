@@ -2,6 +2,7 @@
 title: "ドメイン購入後のやり残し作業 - メールとDNS設定編"
 date: 2026-04-14T22:00:00+09:00
 draft: false
+ai_assisted: true
 tags: ["DNS", "Cloudflare", "SPF", "DMARC", "メール"]
 categories: ["インフラ"]
 ---

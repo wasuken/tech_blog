@@ -2,6 +2,7 @@
 title: "自宅NWをKeepalivedとdnsmasqで作り直した話"
 date: 2026-04-18T19:00:00+09:00
 draft: false
+ai_assisted: true
 tags: ["homelab", "keepalived", "dnsmasq", "tailscale", "raspberry-pi", "network"]
 categories: ["インフラ"]
 ---

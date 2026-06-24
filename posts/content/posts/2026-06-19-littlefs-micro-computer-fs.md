@@ -2,6 +2,7 @@
 title: "RSSで流れてきたlittlefsを読んだのとFatFsとの比較"
 date: 2026-06-19T21:00:00+09:00
 draft: false
+ai_assisted: true
 tags: ["embedded", "filesystem", "littlefs", "fatfs", "c"]
 categories: ["tech"]
 description: "RSSでlittlefsの設計ドキュメントが流れてきたので読んだ。マイコン向けFSの設計思想の話と、定番のFatFsとの比較。"

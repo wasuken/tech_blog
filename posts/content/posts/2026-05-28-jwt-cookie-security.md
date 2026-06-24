@@ -2,6 +2,7 @@
 title: "JWTとCookieセッション管理の変遷を読んで整理した"
 date: 2026-05-28T20:00:00+09:00
 draft: true
+ai_assisted: true
 tags: ["security", "jwt", "cookie", "web"]
 categories: ["記事感想"]
 description: "JWTとCookieセッション管理の変遷を読んで、自分なりに整理した。結論はフロントエンドのJSで認証を扱わないこと。JWSはステートレスでも万能でもなく、型付きのセッションIDと考えると整理しやすい。"

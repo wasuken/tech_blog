@@ -2,6 +2,7 @@
 title: "本が読めなかったから、仕事をやめました - 読書メモ"
 date: 2026-01-09T19:30:00+09:00
 draft: false
+ai_assisted: true
 tags: ["読書", "労働論", "自己啓発", "日本近代史"]
 categories: ["読書メモ"]
 ---

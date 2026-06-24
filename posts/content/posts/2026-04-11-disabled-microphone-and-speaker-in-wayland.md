@@ -2,6 +2,7 @@
 title: "WaylandでモニターがマイクとスピーカーとしてOSに認識される問題をWirePlumberで無効化する"
 date: 2026-04-11T00:00:00+09:00
 draft: false
+ai_assisted: true
 tags: ["Linux", "Wayland", "PipeWire", "WirePlumber", "ALSA", "ArchLinux"]
 ---
 

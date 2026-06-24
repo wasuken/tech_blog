@@ -2,6 +2,7 @@
 title: "AsyncStorageって裏側何やってんの？ - 2.0と3.0の実装の違いを調べてみた"
 date: 2026-02-08T17:50:00+09:00
 draft: false
+ai_assisted: true
 tags: ["React Native", "Expo", "AsyncStorage", "永続化"]
 ---
 

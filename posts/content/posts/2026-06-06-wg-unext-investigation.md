@@ -2,6 +2,7 @@
 title: "WireGuard 経由で UNEXT が見れない問題を調査した話【調査編】"
 date: 2026-06-06T00:00:00+09:00
 draft: false
+ai_assisted: true
 tags: ["WireGuard", "iptables", "インフラ", "ネットワーク", "tcpdump"]
 categories: ["個人開発"]
 description: "WireGuard 経由で UNEXT が見れない問題の調査プロセスを記録した記事。tcpdump・iptables・ルーティングテーブルを使ってどう原因を絞り込んだかの思考トレース。"

@@ -2,6 +2,7 @@
 title: "ArchLinuxのThunarでWalkmanのFSを開く"
 date: 2026-04-04T17:00:00+09:00
 draft: false
+ai_assisted: true
 tags: ["Linux", "ArchLinux", "MTP", "オーディオ"]
 ---
 

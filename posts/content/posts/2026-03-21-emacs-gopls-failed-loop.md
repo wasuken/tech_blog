@@ -2,6 +2,7 @@
 title: "EmacsでGoのLsp補完が死んだときの調査記録"
 date: 2026-03-22T00:00:00+09:00
 draft: false
+ai_assisted: true
 tags: ["emacs", "go", "gopls", "eglot", "lsp"]
 categories: ["開発環境"]
 ---

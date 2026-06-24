@@ -2,6 +2,7 @@
 title: "テスト前提で設計したWebアプリのハンズオン - 読書管理アプリ その2"
 date: 2026-03-04T02:00:00+09:00
 draft: false
+ai_assisted: true
 tags: ["TypeScript", "テスト", "設計", "vitest", "Next.js", "クリーンアーキテクチャ", "DI"]
 categories: ["開発"]
 ---

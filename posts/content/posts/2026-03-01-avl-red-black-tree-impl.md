@@ -2,6 +2,7 @@
 title: "AVL木と赤黒木をPythonで実装して比較する"
 date: 2026-03-01T00:00:00+09:00
 draft: false
+ai_assisted: true
 tags: ["algorithm", "data-structure", "python", "red-black-tree", "avl-tree", "技術書"]
 categories: ["algorithm"]
 description: "AVL木と赤黒木をPythonで実装し、回転・バランス戦略の違いをベンチマークで比較する"

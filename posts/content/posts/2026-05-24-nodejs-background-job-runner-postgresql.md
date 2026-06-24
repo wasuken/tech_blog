@@ -2,6 +2,7 @@
 title: "Node.js でバックグラウンドジョブを自前実装する：PostgreSQL でジョブ管理"
 date: 2026-05-24T00:00:00+09:00
 draft: false
+ai_assisted: true
 tags: ["Node.js", "TypeScript", "PostgreSQL", "バックグラウンド処理", "個人開発"]
 categories: ["個人開発"]
 description: "BullMQ や外部キューを使わず、PostgreSQL の jobs テーブルと while(true) ループで軽量なジョブ管理システムを自前実装した話。Web UI からの操作・重複防止・ログ収集まで対応。"

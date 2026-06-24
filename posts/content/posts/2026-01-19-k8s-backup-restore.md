@@ -2,6 +2,7 @@
 title: "K3s実験環境構築マニュアル：安全に実験→破壊→復元のサイクルを回す"
 date: 2026-01-19T10:30:00+09:00
 draft: false
+ai_assisted: true
 tags: ["kubernetes", "k3s", "proxmox", "infrastructure", "devops"]
 categories: ["Infrastructure"]
 summary: "Proxmox上のK3s環境で安全に実験・破壊・復元サイクルを回すための完全ガイド"

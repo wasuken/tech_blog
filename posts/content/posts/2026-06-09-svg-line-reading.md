@@ -2,6 +2,7 @@
 title: "svg-line: EmacsのステータスバーをSVGで統一する試み"
 date: 2026-06-09T00:06:00+09:00
 draft: false
+ai_assisted: true
 tags: ["emacs", "dotfiles", "ui"]
 categories: ["tech"]
 description: "svg-lineを試した記録。リッチにしようとしたけど結局シンプルに戻した話。"

@@ -2,6 +2,7 @@
 title: "GEMINI.mdでAIに開発履歴を管理させる方法"
 date: 2026-01-31T19:30:00+09:00
 draft: false
+ai_assisted: true
 categories: ["AI開発", "開発効率化"]
 tags: ["Gemini", "AI", "ドキュメント管理", "開発手法", "プロジェクト管理"]
 description: "GEMINI.mdファイルを使ってAI（Gemini）にコーディングルールと開発履歴を管理させる手法を紹介します。AIが自分で学習・改善していくドキュメント駆動開発の実践例。"
