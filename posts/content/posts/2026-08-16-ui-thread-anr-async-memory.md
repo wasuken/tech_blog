@@ -1,5 +1,5 @@
 ---
-title: "UIスレッドとANRの本質：JS/ネイティブ分離が支配する非同期処理とメモリ管理の設計"
+title: "Androidアプリ開発の極意 2,3章あたり ANR、UIスレッド"
 date: 2026-08-16T18:00:00+09:00
 draft: false
 ai_assisted: true
