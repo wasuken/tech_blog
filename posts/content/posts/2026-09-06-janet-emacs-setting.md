@@ -23,6 +23,8 @@ ai_assisted: true
 
 要するに「Janet 自体の話」ではなく「Arch + Emacs で最新のツールチェーンを組もうとすると起きる、環境構築あるあるの詰め合わせ」です。
 
+手っ取り早く動く状態だけ知りたい人は [→ 最短手順](#最短手順詰まらずにやる場合) へ。
+
 ## 動機
 
 新しい言語として [Janet](https://janet-lang.org/) を触ることにした。関数型・手続き型の両方をサポートする軽量な Lisp 系言語で、コア一式（インタプリタ・コンパイラ・アセンブラ・PEG）が1MB未満に収まる。組み込み用途やシステムスクリプティングを想定していて、ファイバ（グリーンスレッド）と PEG が標準で入っているのが特徴。
@@ -156,12 +158,12 @@ install-jpm-git: $(JANET_TARGET)
 	cd build/jpm && ... $(RUN) ../../$(JANET_TARGET) ./bootstrap.janet
 ```
 
-なので pacman 管理の `janet` 本体はそのままに、`jpm` だけ git 版へ切り替えるという構成が成立する。
+なので pacman 管理の `janet` 本体はそのままに、`jpm` だけ git 版へ切り替えるという構成が成立する。インストール先が `/usr/local` 配下になるため、実行には sudo が必要。
 
 ```sh
 sudo pacman -R jpm
 cd ~/src && git clone https://github.com/janet-lang/janet.git
-cd janet && make install-jpm-git
+cd janet && sudo make install-jpm-git
 ```
 
 ## 6. jpm と janet のヘッダパスがズレる
@@ -202,6 +204,81 @@ Arch の janet パッケージが 2026-09-01 に 1.42.0-1 へ更新された一�
 
 `pacman -Syu` を打っても新しい spork ビルドがまだリポジトリに来ていなければ直らない。純 Janet のモジュール（`spork/argparse` など `.so` を持たないもの）は問題なく使えるので、ネイティブ拡張入りのモジュールだけ待つか、`jpm -l install spork` でローカルに自前ビルドするしかない。
 
+結局この時点で、pacman 管理の spork は本体更新への追従が遅れて詰むことが分かったので、最初から spork も jpm 経由のソースビルドに寄せるのが安全という結論に落ち着いた。
+
+## 最短手順（詰まらずにやる場合）
+
+紆余曲折を全部飛ばして最初からこの順でやれば、上のハマりポイントには当たらない。pacman 管理のパッケージ（jpm・spork）はビルドが本体更新に追いつかず壊れやすいので、janet 本体以外はソースビルドに寄せる。
+
+### 1. janet本体は pacman、jpm はソースビルド
+
+```sh
+sudo pacman -S janet
+sudo pacman -R jpm 2>/dev/null  # optional depsで入ってたら消す
+cd ~/src && git clone https://github.com/janet-lang/janet.git
+cd janet && sudo make install-jpm-git
+```
+
+jpm に release タグは無く常に master を追う運用なので、pacman 版を待つ意味がない。
+
+### 2. jpmのヘッダパスを直す
+
+```sh
+sudo sed -i \
+  's|:headerpath "/usr/local/include/janet"|:headerpath "/usr/include/janet"|' \
+  /usr/local/lib/janet/jpm/default-config.janet
+```
+
+janet本体をpacman管理のまま使うなら、この1行は必ず要る。
+
+### 3. spork もソースビルド
+
+```sh
+cd ~/src/janet && sudo make install-spork-git
+```
+
+pacman 版の `janet-spork` は本体アップデートにビルドが追いつかず `config mismatch` で壊れることがある。最初からソースビルドにしておけば、この不一致に当たらない。
+
+### 4. Emacs設定は一式まとめて
+
+```elisp
+;; tree-sitter grammar
+(setq treesit-language-source-alist
+      '((janet-simple . ("https://github.com/sogaiu/tree-sitter-janet-simple"))))
+
+;; major mode
+(straight-use-package
+ '(janet-ts-mode :host github :repo "sogaiu/janet-ts-mode" :files ("*.el")))
+(use-package janet-ts-mode
+  :straight t
+  :mode "\\.janet\\'")
+
+;; REPL
+(straight-use-package
+ '(ajrepl :host github :repo "sogaiu/ajrepl" :files ("*.el" "ajrepl")))
+(use-package ajrepl
+  :straight t
+  :after janet-ts-mode
+  :config
+  (add-hook 'janet-ts-mode-hook #'ajrepl-interaction-mode))
+
+;; eglotはbuilt-in指定（git管理下に置かない）
+(use-package eglot
+  :straight (:type built-in))
+
+;; treesit-autoを使うならjanetは除外（v1.0.8未満は特に注意）
+(use-package treesit-auto
+  :config
+  (setq treesit-auto-recipe-list
+        (seq-remove (lambda (r) (eq (treesit-auto-recipe-lang r) 'janet))
+                    treesit-auto-recipe-list))
+  (treesit-auto-add-to-auto-mode-alist 'all)
+  (setq treesit-auto-install t)
+  (global-treesit-auto-mode +1))
+```
+
+これに [janet-lsp](https://github.com/CFiggers/janet-lsp) を jpm でインストールしてeglotに繋げば補完まで揃う。
+
 ## まとめ
 
 一つ一つは小さいが、全部つながっていた。
@@ -220,6 +297,7 @@ Arch の janet パッケージが 2026-09-01 に 1.42.0-1 へ更新された一�
 
 - janet 本体: pacman 管理（アップデート追従は Arch に任せる）
 - jpm: `janet-lang/janet` の `make install-jpm-git` で最新化
+- spork: 同じく `make install-spork-git` でソースビルド（pacman 版はビルドの追従遅れで壊れやすい）
 - jpm のヘッダパスだけ pacman の janet に合わせて手動修正
 - Emacs: `janet-ts-mode` + `ajrepl` + `eglot` + [CFiggers/janet-lsp](https://github.com/CFiggers/janet-lsp)
 
