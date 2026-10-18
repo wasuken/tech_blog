@@ -1,6 +1,6 @@
 ---
 title: "PostgreSQLのrandom()、SELECTとORDER BYで同じ式書くと使い回される"
-date: 2026-10-18T14:00:00+09:00
+date: 2026-10-18T9:00:00+09:00
 draft: false
 ai_assisted: true
 tags: ["PostgreSQL", "MySQL", "SQLite", "SQL", "docker-compose"]
