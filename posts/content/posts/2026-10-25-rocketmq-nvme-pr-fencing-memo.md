@@ -65,14 +65,3 @@ NVMe Persistent Reservation（PR）は、ストレージ側で「書き込める
 
 - 金融通（阿里云云原生）「Multi-Attach + NVMe PR：RocketMQ 如何用协议级 Fencing 避免脑裂？」SegmentFault、2026年8月 — https://segmentfault.com/a/1190000048183964
 - 同内容の論文（FSE 2026 Industry Papers、アブストラクトのみ確認）— https://conf.researchr.org/details/fse-2026/fse-2026-industry-papers/25/Replication-Free-Failover-Protocol-Fenced-Takeover-for-Stateful-Services
-
----
-
-## 要確認事項
-
-### Must
-- [ ] Shadow BrokerとSlave Brokerの違い、およびFencingで旧Brokerの書き込みが拒否される点 → 確認先の候補: 上記の元記事（読んで確認済みだが、公開前にもう一度）
-
-### Should
-- [ ] 論文本文は未読（アブストラクトのみ）。記事の内容と論文の記述が食い違っていないか
-- [ ] 予約種別、旧BrokerのREAD可否、実測値は本文で扱っていない（未確認のため）
