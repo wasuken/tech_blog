@@ -1,5 +1,5 @@
 baseURL = 'https://techblog.wasutech.dev'
-languageCode = 'ja'
+locale = 'ja-JP'
 title = '怠惰技術ブログ'
 theme = 'PaperMod'
 
