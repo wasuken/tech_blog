@@ -1,5 +1,5 @@
 ---
-title: "自宅Raspberry Pi 8台を一斉に更新した話：資料より実機を見ろ"
+title: "自宅NWのRaspberry Pi apt周辺の改善 upgradeとキャッシュ"
 date: 2026-10-28T09:00:00+09:00
 draft: false
 ai_assisted: true
